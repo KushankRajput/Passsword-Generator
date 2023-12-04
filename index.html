@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://t3.ftcdn.net/jpg/03/48/28/70/360_F_348287028_t07Ol3ykCXqDoKqtkGzaanmOfj8YdC2M.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&family=League+Spartan:wght@100&display=swap" rel="stylesheet"> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="container">
+        <h1>Password Generator</h1>
+
+        <div class="display-container">
+            <!-- with the help of "readonly" we can create an input box in which we can not write anything (only read) -->
+            <input readonly placeholder="Password" class="display" data-passwordDisplay> <!-- here "data-passwordDisplay" is a costom attribute ,which can be acessed by "querySelector" -->
+
+            <button class="copyBtn" data-copy>
+                <span class="tooltip" data-copyMsg></span> <!-- here "data-copyMsg" is a costom attribute ,which can be acessed by "querySelector" -->
+                <img src="copy.svg" alt="" width="23px" height="23px">
+            </button>
+
+        </div>
+
+        <div class="input-container">
+            <div class="length-container">
+                <p>Password Generator</p>
+                <p data-lengthNumber>0</p><!-- here "data-lengthNumber" is a costom attribute ,which can be acessed by "querySelector" -->
+            </div>
+<!--slider  -->
+            <input type="range" min="1" max="20" class="slider" step="1" data-lengthSlider> <!--step 1 means the slider will move everytime one step-->
+        
+<!-- checkbox 1 -->
+            <div class="check">
+                <input type="checkbox" id="upperCase">
+                <label for="upperCase">Includes UpperCase Letters</label>
+            </div>
+<!-- checkbox 2 -->
+            <div class="check">
+                <input type="checkbox" id="lowerCase">
+                <label for="lowerCase">Includes LowerCase Letters</label>
+            </div>
+<!-- checkbox 3 -->
+            <div class="check">
+                <input type="checkbox" id="number">
+                <label for="number">Includes Numbers</label>
+            </div>
+<!-- checkbox 4 -->
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Includes  Symbols</label>
+            </div>
+
+<!-- strength -->
+            <div class="strength-container">
+                <p>Strength</p>
+                <div class="indicator" data-indicator></div>  <!-- data-indicator is a costum variable which will be accessed by js -->
+            </div>
+
+<!-- Generate Password -->
+            <button class="generateButton">Generate Password</button>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
